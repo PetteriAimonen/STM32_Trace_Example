@@ -1,8 +1,8 @@
 /* 2015 Petteri Aimonen <jpa@git.mail.kapsi.fi>
  * Public domain. */
  
-#ifndef ETM_CM3_H
-#define ETM_CM3_H
+#ifndef ARM_ETM_H
+#define ARM_ETM_H
 
 #include "core_cm3.h"
 

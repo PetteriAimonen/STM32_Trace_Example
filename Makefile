@@ -25,7 +25,7 @@ program: $(BINNAME)
 
 debug: $(BINNAME)
 	$(GDB) -iex 'target extended | $(OOCD) $(OOCDFLAGS) -c "gdb_port pipe"' \
-	       -iex 'mon reset halt' $<
+               -iex 'mon halt' $<
 
 $(BINNAME): $(CSRC) stm32.ld
 	$(CC) $(CFLAGS) $(LFLAGS) -o $@ $<   
