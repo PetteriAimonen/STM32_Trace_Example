@@ -13,3 +13,8 @@ What this does:
 1. Configures the trace pin to output TPIU formatted trace from both ITM and ETM.
 2. Blinks a led, while monitored by ITM tracing.
 3. Causes periodic interrupts, where it runs bubblesort while tracing it with ETM.
+
+# Trace configuration with OpenOCD
+
+The file configure-trace.openocd contains an alternative way to configure tracing
+without modifying the actual executable.
