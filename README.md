@@ -18,3 +18,12 @@ What this does:
 
 The file configure-trace.openocd contains an alternative way to configure tracing
 without modifying the actual executable.
+
+# Random notes
+
+OpenOCD also has some built-in ETM configuration support. If anyone has an
+example on how to use it, I'm interested.
+
+Atleast STM32F407 seems to require a few extra settings: `ETM_CR` to `0xd90` to set
+the trace port internal width. `ETM_TEEVR` to `0x6F` to do something related to
+"start/stop resources"..
