@@ -41,7 +41,8 @@ void configure_tracing()
     
     /* Configure Trace Port Interface Unit */
     CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk; // Enable access to registers
-    TPI->ACPR = 0; // Trace clock = HCLK/(x+1) = 8MHz
+    TPI->ACPR = 0; // Trace clock = HCLK/(x+1) = 8MHz = UART 's baudrate
+                   // The HCLK of F105 is 8MHz so x is 0, and the F103 is 72MHz so x is 8
     TPI->SPPR = 2; // Pin protocol = NRZ/USART
     TPI->FFCR = 0x102; // TPIU packet framing enabled when bit 2 is set.
                        // You can use 0x100 if you only need DWT/ITM and not ETM.
