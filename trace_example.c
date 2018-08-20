@@ -73,11 +73,14 @@ void configure_tracing()
     ETM->CR = ETM_CR_ETMEN // Enable ETM output port
             | ETM_CR_STALL_PROCESSOR // Stall processor when fifo is full
             | ETM_CR_BRANCH_OUTPUT; // Report all branches
+         // | ETM_CR_PORTIZE_8BIT;  // Add this code in F103 to set port_size 21, 6, 5, 4 as 0, 0, 0, 1 for 8Bit.
     ETM->TRACEIDR = 2; // Trace bus ID for TPIU
     ETM->TECR1 = ETM_TECR1_EXCLUDE; // Trace always enabled
     ETM->FFRR = ETM_FFRR_EXCLUDE; // Stalling always enabled
     ETM->FFLR = 24; // Stall when less than N bytes free in FIFO (range 1..24)
                     // Larger values mean less latency in trace, but more stalls.
+    // ETM->TRIGGER = 0x0000406F; // Add this code in F103 to define the trigger event
+    // ETM->TEEVR = 0x0000006F;   // Add this code in F103 to  define an event to start/stop
     // Note: we do not enable ETM trace yet, only for specific parts of code.
 }
 
