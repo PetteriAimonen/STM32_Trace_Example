@@ -49,7 +49,7 @@ void configure_tracing()
     
     /* Configure PC sampling and exception trace  */
     DWT->CTRL = (1 << DWT_CTRL_CYCTAP_Pos) // Prescaler for PC sampling
-                                           // 0 = x32, 1 = x512
+                                           // 0 = x64, 1 = x1024
               | (0 << DWT_CTRL_POSTPRESET_Pos) // Postscaler for PC sampling
                                                 // Divider = value + 1
               | (1 << DWT_CTRL_PCSAMPLENA_Pos) // Enable PC sampling
